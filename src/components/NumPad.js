@@ -1,8 +1,10 @@
 import React from "react";
 
+
+
 function NumberSquare(props) {
   return (
-    <button className="number-square">
+    <button className="number-square" onClick={props.onClick}>
       {props.value}
     </button>
   );
@@ -11,14 +13,35 @@ function NumberSquare(props) {
 class NumPad extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      inputNumber: "",
+      inputNumberDecimal: false,
+    }
+  }
+
+  handleClick(i) {
+    let prev = this.state.inputNumber;
+    let new_digit = i
+    if (i === "." && this.state.inputNumberDecimal === true){
+      return;
+    }
+    if (i === ".") {
+      this.setState({inputNumberDecimal: true});
+      new_digit = ".";
+    }
+    let current = prev + new_digit;
+    this.setState(
+      {inputNumber: current},
+    )
+    console.log(this.state.inputNumber);
   }
 
   renderNumberSquare(i){
     if (typeof i  !== "string"){
-      return <NumberSquare value={i}/>;
+      return <NumberSquare value={i} onClick={() => this.handleClick(i)}/>;
     }
     else {
-      return <NumberSquare value={i}/>;
+      return <NumberSquare value={i} onClick={() => this.handleClick(i)}/>;
     }
   }
 
