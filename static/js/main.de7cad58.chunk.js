@@ -1,2 +1,0 @@
-(this.webpackJsonpncalc=this.webpackJsonpncalc||[]).push([[0],{10:function(c,e,n){},4:function(c,e,n){"use strict";n.r(e);var t=n(2),o=n(0),r=n.n(o),s=n(3),i=n.n(s);n(10);i.a.render(Object(t.jsx)(r.a.StrictMode,{children:Object(t.jsx)("h1",{children:"Hello world"})}),document.getElementById("root"))}},[[4,1,2]]]);
-//# sourceMappingURL=main.de7cad58.chunk.js.map
